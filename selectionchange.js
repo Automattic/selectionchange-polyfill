@@ -1,6 +1,6 @@
 // github.com/2is10/selectionchange-polyfill
 
-var selectionchange = (function (undefined) {
+module.exports = (function (undefined) {
 
   var SELECT_ALL_MODIFIER = /^Mac/.test(navigator.platform) ? 'metaKey' : 'ctrlKey';
   var RANGE_PROPS = ['startContainer', 'startOffset', 'endContainer', 'endOffset'];
