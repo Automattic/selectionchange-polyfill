@@ -63,8 +63,10 @@ function hasNativeSupport(doc) {
 
 function onKeyDown(e) {
   var code = e.keyCode;
-  if (code === 65 && e[SELECT_ALL_MODIFIER] && !e.shiftKey && !e.altKey || // Ctrl-A or Cmd-A
-      (code <= 40 && code >= 37) && e.shiftKey) { // (Alt-)Shift-arrow
+  if (
+      (code === 65 && e[SELECT_ALL_MODIFIER] && !e.shiftKey && !e.altKey) || // Ctrl-A or Cmd-A
+      (code <= 40 && code >= 37) // directional arrow keys
+     ) {
     setTimeout(dispatchIfChanged.bind(null, this), 0);
   }
 }
