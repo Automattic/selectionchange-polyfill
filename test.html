@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>selectionchange polyfill test page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <div contenteditable="true">hello world!</div>
+    <script src="build.js"></script>
+    <script>
+
+      Selectionchange.start(document);
+
+      document.addEventListener('selectionchange', function (e) {
+        console.log('selectionchange', e);
+      }, false);
+    </script>
+  </body>
+</html>
