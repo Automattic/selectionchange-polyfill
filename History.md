@@ -1,4 +1,9 @@
 
+0.0.2 / 2014-12-12
+==================
+
+  * selectionchange: re-check Selection upon any keydown event
+
 0.0.1 / 2014-11-06
 ==================
 
