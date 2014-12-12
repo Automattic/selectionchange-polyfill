@@ -16,7 +16,6 @@ exports.stop = stop;
 exports.hasNativeSupport = hasNativeSupport;
 
 
-var SELECT_ALL_MODIFIER = /^Mac/.test(navigator.platform) ? 'metaKey' : 'ctrlKey';
 var RANGE_PROPS = ['startContainer', 'startOffset', 'endContainer', 'endOffset'];
 
 var ranges;
@@ -62,13 +61,13 @@ function hasNativeSupport(doc) {
 }
 
 function onKeyDown(e) {
-  var code = e.keyCode;
-  if (
-      (code === 65 && e[SELECT_ALL_MODIFIER] && !e.shiftKey && !e.altKey) || // Ctrl-A or Cmd-A
-      (code <= 40 && code >= 37) // directional arrow keys
-     ) {
-    setTimeout(dispatchIfChanged.bind(null, this), 0);
-  }
+  // any "keydown" event go ahead and check if the Selection has changed.
+  // this catches regular keypresses in a contenteditable,
+  // cmd + A for "select all",
+  // cmd + Z for "undo",
+  // directional arrows for moving around the cursor inside a contenteditable,
+  // etc.
+  setTimeout(dispatchIfChanged.bind(null, this), 0);
 }
 
 function onMouseDown(e) {
