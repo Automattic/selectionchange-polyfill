@@ -16,8 +16,6 @@ exports.stop = stop;
 exports.hasNativeSupport = hasNativeSupport;
 
 
-var RANGE_PROPS = ['startContainer', 'startOffset', 'endContainer', 'endOffset'];
-
 var ranges;
 
 function start (doc) {
@@ -100,14 +98,31 @@ function onFocus() {
 function dispatchIfChanged(doc) {
   var rOld = ranges.get(doc);
   var rNew = currentRange(doc);
+
+  // flatten the Range onto an Object first, so that it's "detached" from the DOM.
+  // this fixes "backspace" in Firefox
+  if (rNew) rNew = flatten(rNew);
+
   if (!sameRange(rNew, rOld)) {
     ranges.set(doc, rNew);
     setTimeout(doc.dispatchEvent.bind(doc, new Event('selectionchange')), 0);
   }
 }
 
+function flatten (range) {
+  var r = {};
+  r.startContainer = range.startContainer;
+  r.startOffset = range.startOffset;
+  r.endContainer = range.endContainer;
+  r.endOffset = range.endOffset;
+  return r;
+}
+
 function sameRange(r1, r2) {
-  return r1 === r2 || r1 && r2 && RANGE_PROPS.every(function (prop) {
-    return r1[prop] === r2[prop];
-  });
+  return (r1 === r2) || (r1 && r2 &&
+      r1.startContainer === r2.startContainer &&
+      r1.startOffset === r2.startOffset &&
+      r1.endContainer === r2.endContainer &&
+      r1.endOffset === r2.endOffset
+    );
 }
