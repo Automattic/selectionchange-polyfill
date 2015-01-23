@@ -1,4 +1,9 @@
 
+0.0.3 / 2015-01-23
+==================
+
+  * selectionchange: "flatten" the Range instances
+
 0.0.2 / 2014-12-12
 ==================
 
