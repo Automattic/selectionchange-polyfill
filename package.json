@@ -19,6 +19,7 @@
   "dependencies": {
     "component-event": "~0.1.4",
     "current-range": "~1.1.0",
+    "range-equals": "1.0.0",
     "weakmap": "0.0.6"
   }
 }

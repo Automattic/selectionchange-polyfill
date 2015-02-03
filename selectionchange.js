@@ -6,6 +6,7 @@
 var WeakMap = require('weakmap');
 var event = require('component-event');
 var currentRange = require('current-range');
+var rangeEquals = require('range-equals');
 
 /**
  * Module exports.
@@ -103,7 +104,7 @@ function dispatchIfChanged(doc) {
   // this fixes "backspace" in Firefox
   if (rNew) rNew = flatten(rNew);
 
-  if (!sameRange(rNew, rOld)) {
+  if (!rangeEquals(rNew, rOld)) {
     ranges.set(doc, rNew);
     setTimeout(doc.dispatchEvent.bind(doc, new Event('selectionchange')), 0);
   }
@@ -116,13 +117,4 @@ function flatten (range) {
   r.endContainer = range.endContainer;
   r.endOffset = range.endOffset;
   return r;
-}
-
-function sameRange(r1, r2) {
-  return (r1 === r2) || (r1 && r2 &&
-      r1.startContainer === r2.startContainer &&
-      r1.startOffset === r2.startOffset &&
-      r1.endContainer === r2.endContainer &&
-      r1.endOffset === r2.endOffset
-    );
 }
