@@ -19,7 +19,7 @@ node_modules: package.json
 
 %.js: %.es6 node_modules
 	@printf '\e[1;93m %-10s\e[m %s > %s\n' "babel" "$<" "$@"
-	@$(BABEL) "$<" --optional selfContained --experimental > "$@"
+	@$(BABEL) "$<" --optional runtime --experimental > "$@"
 
 clean:
 	rm -f selectionchange.js
