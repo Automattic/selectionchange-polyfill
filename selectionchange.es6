@@ -3,23 +3,13 @@
  * Module dependecies.
  */
 
-var WeakMap = require('weakmap');
-var event = require('component-event');
-var currentRange = require('current-range');
-var rangeEquals = require('range-equals');
-
-/**
- * Module exports.
- */
-
-exports.start = start;
-exports.stop = stop;
-exports.hasNativeSupport = hasNativeSupport;
-
+import event from 'component-event';
+import currentRange from 'current-range';
+import rangeEquals from 'range-equals';
 
 var ranges;
 
-function start (doc) {
+export function start (doc) {
   var d = doc || document;
   if (ranges || !hasNativeSupport(d) && (ranges = new WeakMap())) {
     if (!ranges.has(d)) {
@@ -33,7 +23,7 @@ function start (doc) {
   }
 }
 
-function stop (doc) {
+export function stop (doc) {
   var d = doc || document;
   if (ranges && ranges.has(d)) {
     ranges['delete'](d);
@@ -45,7 +35,7 @@ function stop (doc) {
   }
 }
 
-function hasNativeSupport(doc) {
+export function hasNativeSupport(doc) {
   var osc = doc.onselectionchange;
   if (osc !== undefined) {
     try {
