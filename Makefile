@@ -13,11 +13,7 @@ BABEL ?= $(NODE) $(BIN)/babel
 
 build: selectionchange.js
 
-node_modules: package.json
-	@$(NPM) install
-	@touch node_modules
-
-%.js: %.es6 node_modules
+%.js: %.es6
 	@printf '\e[1;93m %-10s\e[m %s > %s\n' "babel" "$<" "$@"
 	@$(BABEL) "$<" --optional runtime --experimental > "$@"
 
