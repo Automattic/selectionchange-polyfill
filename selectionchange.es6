@@ -13,7 +13,10 @@ export function start (doc) {
   var d = doc || document;
   if (ranges || !hasNativeSupport(d) && (ranges = new WeakMap())) {
     if (!ranges.has(d)) {
-      ranges.set(d, currentRange(d));
+      var range = currentRange(d);
+      if (range) {
+        ranges.set(d, flatten(range));
+      }
       event.bind(d, 'keydown', onKeyDown);
       event.bind(d, 'mousedown', onMouseDown);
       event.bind(d, 'mousemove', onMouseMove);
