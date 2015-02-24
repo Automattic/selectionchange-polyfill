@@ -12,6 +12,9 @@
     "url": "https://github.com/Automattic/selectionchange-polyfill.git"
   },
   "author": "Jared Jacobs <jared@42go.com>",
+  "contributors": [
+    "Nathan Rajlich <nathan@automattic.com>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Automattic/selectionchange-polyfill/issues"
