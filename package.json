@@ -4,6 +4,7 @@
   "description": "A polyfill that fires `selectionchange` events for Firefox",
   "main": "selectionchange.js",
   "scripts": {
+    "prepublish": "make",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
