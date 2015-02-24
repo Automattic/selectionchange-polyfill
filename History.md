@@ -1,4 +1,12 @@
 
+1.1.3 / 2015-02-23
+==================
+
+  * Makefile: remove NPM
+  * package: update "range-equals" to v1.1.0
+  * package: add "contributors" section
+  * package: update URLs to `Automattic/selectionchange-polyfill`
+
 1.1.2 / 2015-02-23
 ==================
 
