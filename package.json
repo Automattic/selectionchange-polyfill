@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/2is10/selectionchange-polyfill.git"
+    "url": "https://github.com/Automattic/selectionchange-polyfill.git"
   },
   "author": "Jared Jacobs <jared@42go.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/2is10/selectionchange-polyfill/issues"
+    "url": "https://github.com/Automattic/selectionchange-polyfill/issues"
   },
-  "homepage": "https://github.com/2is10/selectionchange-polyfill",
+  "homepage": "https://github.com/Automattic/selectionchange-polyfill",
   "dependencies": {
     "babel-runtime": "~4.4.5",
     "component-event": "~0.1.4",
