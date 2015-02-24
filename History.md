@@ -1,4 +1,12 @@
 
+1.1.0 / 2015-02-23
+==================
+
+  * convert to ES6 module, compiled via "babel"
+  * Makefile: remove `npm install` rule
+  * Makefile: use "runtime" transformer
+  * package: run `make` upon "prepublish"
+
 1.0.0 / 2015-02-03
 ==================
 
