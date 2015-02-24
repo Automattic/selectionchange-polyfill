@@ -21,8 +21,7 @@
     "babel-runtime": "~4.4.5",
     "component-event": "~0.1.4",
     "current-range": "~1.1.0",
-    "range-equals": "1.0.0",
-    "weakmap": "0.0.6"
+    "range-equals": "1.0.0"
   },
   "devDependencies": {
     "babel": "~4.4.5"
