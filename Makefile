@@ -8,7 +8,6 @@ BIN := $(THIS_DIR)/node_modules/.bin
 
 # applications
 NODE ?= node
-NPM ?= $(NODE) $(shell which npm)
 BABEL ?= $(NODE) $(BIN)/babel
 
 build: selectionchange.js
