@@ -21,12 +21,12 @@
   },
   "homepage": "https://github.com/Automattic/selectionchange-polyfill",
   "dependencies": {
-    "babel-runtime": "~4.4.5",
+    "babel-runtime": "4",
     "component-event": "~0.1.4",
     "current-range": "~1.1.0",
     "range-equals": "1.1.0"
   },
   "devDependencies": {
-    "babel": "~4.4.5"
+    "babel": "4"
   }
 }
