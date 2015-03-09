@@ -1,4 +1,10 @@
 
+1.1.4 / 2015-03-09
+==================
+
+  * package: update "range-equals" to v1.1.1
+  * package: pin "babel" and "babel-runtime" to v4.7.4
+
 1.1.3 / 2015-02-23
 ==================
 
